@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Angular Color Picker Directive</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">               
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" href="css/color-picker.css" />  
+        <style>
+            input[color-picker]{
+                margin-bottom: 10px;
+                width: 182px;
+            }
+        </style>
+    </head>
+    <body>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js"></script>
+        <script src="js/color-picker.js"></script>
+        <script>var app = angular.module('app', ['colorpicker']);</script>  
+        <script>
+            app.controller('AppCtrl', ['$scope', function ($scope) {
+                $scope.var3 = '#ff2e00';
+            }]);
+        </script>
+        <div class="container" ng-app="app" ng-controller="AppCtrl">
+            <div class="row">   
+                <hr>
+                <div class="col-md-5">
+                    <input color-picker                            
+                           color-picker-model="var"
+                           ng-style="{background: var}"
+                           color-picker-output-format="'hex'"
+                           />                    
+                </div>
+                <p>test : {{var}}</p>
+    </body>
+</html>
